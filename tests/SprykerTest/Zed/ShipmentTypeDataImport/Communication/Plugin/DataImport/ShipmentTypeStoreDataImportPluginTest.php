@@ -66,9 +66,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
      */
     protected ShipmentTypeDataImportCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -76,9 +73,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
         $this->tester->ensureDatabaseTableIsEmpty($this->tester->getShipmentTypeQuery());
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -86,9 +80,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
         $this->tester->ensureDatabaseTableIsEmpty($this->tester->getShipmentTypeStoreQuery());
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsDataWhenValidDataSetGiven(): void
     {
         // Arrange
@@ -122,9 +113,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
         $this->assertSame(2, $this->tester->getShipmentTypeStoreEntityCount());
     }
 
-    /**
-     * @return void
-     */
     public function testImportDoesntImportDataWhenShipmentKeyDoesntExist(): void
     {
         // Arrange
@@ -149,9 +137,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testImportDoesntImportDataWhenStoreDoesntExist(): void
     {
         // Arrange
@@ -181,9 +166,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testImportDoesntImportDataWhenShipmentKeyIsMissing(): void
     {
         // Arrange
@@ -208,9 +190,6 @@ class ShipmentTypeStoreDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsExpectedType(): void
     {
         // Arrange

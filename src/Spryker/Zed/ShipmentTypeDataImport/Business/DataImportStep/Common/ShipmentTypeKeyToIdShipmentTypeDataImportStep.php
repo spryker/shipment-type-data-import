@@ -30,21 +30,12 @@ class ShipmentTypeKeyToIdShipmentTypeDataImportStep implements DataImportStepInt
      */
     protected array $shipmentTypeIdsIndexedByKey = [];
 
-    /**
-     * @param string $dataSetColumnShipmentTypeKey
-     * @param string $dataSetColumnIdShipmentType
-     */
     public function __construct(string $dataSetColumnShipmentTypeKey, string $dataSetColumnIdShipmentType)
     {
         $this->dataSetColumnShipmentTypeKey = $dataSetColumnShipmentTypeKey;
         $this->dataSetColumnIdShipmentType = $dataSetColumnIdShipmentType;
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         /** @var string $shipmentTypeKey */
@@ -85,9 +76,6 @@ class ShipmentTypeKeyToIdShipmentTypeDataImportStep implements DataImportStepInt
         return $idShipmentType;
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentType\Persistence\SpyShipmentTypeQuery
-     */
     protected function getShipmentTypeQuery(): SpyShipmentTypeQuery
     {
         return SpyShipmentTypeQuery::create();

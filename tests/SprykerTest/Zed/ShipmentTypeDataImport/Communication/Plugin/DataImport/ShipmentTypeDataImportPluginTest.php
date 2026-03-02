@@ -44,9 +44,6 @@ class ShipmentTypeDataImportPluginTest extends Unit
      */
     protected ShipmentTypeDataImportCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class ShipmentTypeDataImportPluginTest extends Unit
         $this->tester->ensureDatabaseTableIsEmpty($this->tester->getShipmentTypeQuery());
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -64,9 +58,6 @@ class ShipmentTypeDataImportPluginTest extends Unit
         $this->tester->ensureDatabaseTableIsEmpty($this->tester->getShipmentTypeQuery());
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsDataWhenValidDataSetGiven(): void
     {
         // Arrange
@@ -85,9 +76,6 @@ class ShipmentTypeDataImportPluginTest extends Unit
         $this->assertSame(2, $this->tester->getShipmentTypeEntityCount());
     }
 
-    /**
-     * @return void
-     */
     public function testImportUpdatesEntityWhenDuplicatedKeyGiven(): void
     {
         // Arrange
@@ -110,9 +98,6 @@ class ShipmentTypeDataImportPluginTest extends Unit
         $this->assertFalse($shipmenTypeEntity->getIsActive());
     }
 
-    /**
-     * @return void
-     */
     public function testImportDoesntImportDataWhenRequiredFieldsAreMissing(): void
     {
         // Arrange
@@ -148,9 +133,6 @@ class ShipmentTypeDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsExpectedType(): void
     {
         // Arrange

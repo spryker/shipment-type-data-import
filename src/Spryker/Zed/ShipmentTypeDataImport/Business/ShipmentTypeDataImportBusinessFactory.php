@@ -26,9 +26,6 @@ use Spryker\Zed\ShipmentTypeDataImport\Business\Validator\DataSetValidatorInterf
  */
 class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getShipmentTypeDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig(
@@ -42,9 +39,6 @@ class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getShipmentTypeStoreDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig(
@@ -64,9 +58,6 @@ class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getShipmentMethodShipmentTypeDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig(
@@ -86,9 +77,6 @@ class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createShipmentTypeWriteDataImportStep(): DataImportStepInterface
     {
         return new ShipmentTypeWriteDataImportStep(
@@ -96,12 +84,6 @@ class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
         );
     }
 
-    /**
-     * @param string $dataSetColumnShipmentTypeKey
-     * @param string $dataSetColumnIdShipmentType
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createShipmentTypeKeyToIdShipmentTypeDataImportStep(
         string $dataSetColumnShipmentTypeKey,
         string $dataSetColumnIdShipmentType
@@ -112,17 +94,11 @@ class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createStoreNameToIdStoreDataImportStep(): DataImportStepInterface
     {
         return new StoreNameToIdStoreDataImportStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createShipmentTypeStoreWriteDataImportStep(): DataImportStepInterface
     {
         return new ShipmentTypeStoreWriteDataImportStep(
@@ -130,25 +106,16 @@ class ShipmentTypeDataImportBusinessFactory extends DataImportBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createShipmentMethodKeyToIdShipmentMethodDataImportStep(): DataImportStepInterface
     {
         return new ShipmentMethodKeyToIdShipmentMethodDataImportStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createShipmentMethodWriteDataImportStep(): DataImportStepInterface
     {
         return new ShipmentMethodWriteDataImportStep();
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeDataImport\Business\Validator\DataSetValidatorInterface
-     */
     public function createDataSetValidator(): DataSetValidatorInterface
     {
         return new DataSetValidator();

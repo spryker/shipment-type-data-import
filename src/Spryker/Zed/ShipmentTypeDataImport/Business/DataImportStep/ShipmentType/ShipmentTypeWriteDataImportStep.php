@@ -28,19 +28,11 @@ class ShipmentTypeWriteDataImportStep extends PublishAwareStep implements DataIm
      */
     protected DataSetValidatorInterface $dataSetValidator;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypeDataImport\Business\Validator\DataSetValidatorInterface $dataSetValidator
-     */
     public function __construct(DataSetValidatorInterface $dataSetValidator)
     {
         $this->dataSetValidator = $dataSetValidator;
     }
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $this->dataSetValidator->assertNoEmptyColumns($dataSet);
@@ -59,9 +51,6 @@ class ShipmentTypeWriteDataImportStep extends PublishAwareStep implements DataIm
         $this->addPublishEvents(static::SHIPMENT_TYPE_PUBLISH, $shipmentTypeEntity->getIdShipmentType());
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentType\Persistence\SpyShipmentTypeQuery
-     */
     protected function getShipmentTypeQuery(): SpyShipmentTypeQuery
     {
         return SpyShipmentTypeQuery::create();

@@ -21,11 +21,6 @@ class StoreNameToIdStoreDataImportStep implements DataImportStepInterface
      */
     protected array $storeIdsIndexedByName = [];
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         /** @var string $storeName */
@@ -60,9 +55,6 @@ class StoreNameToIdStoreDataImportStep implements DataImportStepInterface
         return $idStore;
     }
 
-    /**
-     * @return \Orm\Zed\Store\Persistence\SpyStoreQuery
-     */
     protected function getStoreQuery(): SpyStoreQuery
     {
         return SpyStoreQuery::create();

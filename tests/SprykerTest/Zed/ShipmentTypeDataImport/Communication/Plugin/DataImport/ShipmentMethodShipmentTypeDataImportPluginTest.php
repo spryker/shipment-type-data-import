@@ -56,9 +56,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
      */
     protected ShipmentTypeDataImportCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -67,9 +64,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
         $this->tester->ensureDatabaseTableIsEmpty($this->tester->getShipmentMethodQuery());
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         parent::tearDown();
@@ -77,9 +71,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
         $this->tester->ensureDatabaseTableIsEmpty($this->tester->getShipmentMethodQuery());
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsDataWhenValidDataSetGiven(): void
     {
         // Arrange
@@ -115,9 +106,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testImportDoesntImportDataWhenShipmentMethodNotFound(): void
     {
         $this->tester->haveShipmentType(
@@ -146,9 +134,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testImportDoesntImportDataWhenShipmentTypeNotFound(): void
     {
         $this->tester->haveShipmentType(
@@ -172,9 +157,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
         $this->assertSame(0, $this->tester->getShipmentMethodWithShipmentTypeEntityCount());
     }
 
-    /**
-     * @return void
-     */
     public function testImportUpdatesDeliveryMethodWhenNullableDeliveryTypeGiven(): void
     {
         // Arrange
@@ -205,9 +187,6 @@ class ShipmentMethodShipmentTypeDataImportPluginTest extends Unit
         $this->assertNull($shipmentTypeEntity->getFkShipmentType());
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsExpectedType(): void
     {
         // Arrange

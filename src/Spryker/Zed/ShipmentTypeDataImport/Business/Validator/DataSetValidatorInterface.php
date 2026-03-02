@@ -11,10 +11,5 @@ use Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface;
 
 interface DataSetValidatorInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function assertNoEmptyColumns(DataSetInterface $dataSet): void;
 }

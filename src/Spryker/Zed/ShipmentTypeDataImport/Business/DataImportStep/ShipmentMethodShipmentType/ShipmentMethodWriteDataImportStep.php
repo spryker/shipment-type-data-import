@@ -22,11 +22,6 @@ class ShipmentMethodWriteDataImportStep extends PublishAwareStep implements Data
      */
     protected const SHIPMENT_METHOD_PUBLISH = 'Shipment.shipment_method.publish';
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         /** @var \Orm\Zed\Shipment\Persistence\SpyShipmentMethod $shipmentMethodEntity */
@@ -44,9 +39,6 @@ class ShipmentMethodWriteDataImportStep extends PublishAwareStep implements Data
         }
     }
 
-    /**
-     * @return \Orm\Zed\Shipment\Persistence\SpyShipmentMethodQuery
-     */
     protected function getShipmentMethodQuery(): SpyShipmentMethodQuery
     {
         return SpyShipmentMethodQuery::create();

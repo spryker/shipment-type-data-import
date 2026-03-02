@@ -68,9 +68,6 @@ class ShipmentMethodKeyToIdShipmentMethodDataImportStep implements DataImportSte
         return $idShipmentMethod;
     }
 
-    /**
-     * @return \Orm\Zed\Shipment\Persistence\SpyShipmentMethodQuery
-     */
     protected function createShipmentMethodQuery(): SpyShipmentMethodQuery
     {
         return SpyShipmentMethodQuery::create();

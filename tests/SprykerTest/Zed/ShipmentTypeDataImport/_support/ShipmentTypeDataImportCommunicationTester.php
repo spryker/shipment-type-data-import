@@ -35,25 +35,16 @@ class ShipmentTypeDataImportCommunicationTester extends Actor
 {
     use _generated\ShipmentTypeDataImportCommunicationTesterActions;
 
-    /**
-     * @return int
-     */
     public function getShipmentTypeEntityCount(): int
     {
         return $this->getShipmentTypeQuery()->count();
     }
 
-    /**
-     * @return int
-     */
     public function getShipmentTypeStoreEntityCount(): int
     {
         return $this->getShipmentTypeStoreQuery()->count();
     }
 
-    /**
-     * @return int
-     */
     public function getShipmentMethodWithShipmentTypeEntityCount(): int
     {
         return $this->getShipmentMethodQuery()
@@ -61,45 +52,26 @@ class ShipmentTypeDataImportCommunicationTester extends Actor
             ->count();
     }
 
-    /**
-     * @param string $shipmentTypeKey
-     *
-     * @return \Orm\Zed\ShipmentType\Persistence\SpyShipmentType
-     */
     public function getShipmentTypeEntity(string $shipmentTypeKey): SpyShipmentType
     {
         return $this->getShipmentTypeQuery()->findOneByKey($shipmentTypeKey);
     }
 
-    /**
-     * @param int $idShipmentMethod
-     *
-     * @return \Orm\Zed\Shipment\Persistence\SpyShipmentMethod
-     */
     public function getShipmentMethodEntity(int $idShipmentMethod): SpyShipmentMethod
     {
         return $this->getShipmentMethodQuery()->findOneByIdShipmentMethod($idShipmentMethod);
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentType\Persistence\SpyShipmentTypeQuery
-     */
     public function getShipmentTypeQuery(): SpyShipmentTypeQuery
     {
         return SpyShipmentTypeQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentType\Persistence\SpyShipmentTypeStoreQuery
-     */
     public function getShipmentTypeStoreQuery(): SpyShipmentTypeStoreQuery
     {
         return SpyShipmentTypeStoreQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Shipment\Persistence\SpyShipmentMethodQuery
-     */
     public function getShipmentMethodQuery(): SpyShipmentMethodQuery
     {
         return SpyShipmentMethodQuery::create();
